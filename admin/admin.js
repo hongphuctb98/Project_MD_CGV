@@ -10,7 +10,6 @@ const addBtn = document.querySelector(".add-btn");
 
 let users = JSON.parse(localStorage.getItem("USERS"));
 let movielist = JSON.parse(localStorage.getItem("MovieList"));
-
 //render user
 function renderUser(users) {
   tbodyUser.innerHTML = "";
@@ -291,15 +290,10 @@ importBtn?.addEventListener("click", function () {
   let file = document.getElementById("input-file").files[0];
   var reader = new FileReader();
   reader.addEventListener("load", function () {
-    movieList = JSON.parse(this.result);
-    console.log(movieList);
-    // saveToStorage("stringArr", movieList);
-    for (let i = 0; i < movieList.length - 1; i++) {
-      if (movieList[i].id == movieList[i + 1].id) {
-        movieList.splice(i, 1);
-        saveToStorage("stringArr", movieList);
-      }
-    }
+    movielist = JSON.parse(this.result);
+    localStorage.setItem("MovieList", JSON.stringify(movielist));
   });
+  renderMovie(JSON.parse(localStorage.getItem("stringArr")));
+  window.location.href = "./admin.html";
   reader.readAsText(file);
 });

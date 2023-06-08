@@ -3,3 +3,5 @@ if (headerAccount.textContent != "ĐĂNG NHẬP/ ĐĂNG KÝ") {
     console.log(headerAccount.textContent);
   });
 }
+
+localStorage.setItem("MovieList", JSON.stringify(movielist));
