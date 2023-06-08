@@ -1,0 +1,83 @@
+.main {
+  background: none;
+}
+
+input {
+  border-radius: 8px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: red;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+}
+
+.carousel-indicators {
+  margin: 0;
+}
+
+.top-selection {
+  padding: 0 20px;
+  display: flex;
+  background-color: #e71a0f;
+  color: white;
+  font-size: 1rem;
+  justify-content: space-around;
+}
+
+.top-selection p {
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.main-selection {
+  padding: 20px;
+}
+.main-selection div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+.main-selection div label {
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.main-selection div input {
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+}
+.main-selection .login-btn {
+  background-color: #e71a0f;
+  width: 200px;
+  margin: 0 auto;
+  margin-top: 2rem;
+  border-radius: 4px;
+}
+
+.main-selection button {
+  color: #fff;
+}
+.main-selection button:hover {
+  background-color: #e64a42;
+  color: white;
+}
+
+.main-selection .gender {
+  margin-bottom: 0;
+}
+
+.main-selection .gender input {
+  margin-left: 1rem;
+  margin-right: 4px;
+}
+
+.main-selection .birthday input {
+  width: 7rem;
+  padding: 0.2rem 1rem;
+  margin-right: 2rem;
+  border-radius: 4px;
+}

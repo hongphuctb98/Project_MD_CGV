@@ -1,0 +1,39 @@
+.main {
+  margin-top: 0;
+  background: none;
+}
+
+.navigation {
+  background-color: #f1f0e5;
+  border-bottom: 1px solid #ccc;
+}
+
+.navigation ul {
+  width: var(--container-width-);
+  margin: 0 auto;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-container h1 {
+  padding-bottom: 1rem;
+  border-bottom: 4px solid black;
+  margin: 2rem 0;
+}
+
+.product-img img {
+  width: 100%;
+}
+
+.product-book {
+  margin-top: 0.8rem;
+}
+
+.product-book .btn-film-info {
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+}

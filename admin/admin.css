@@ -1,0 +1,115 @@
+.login_content {
+  background: url("../img/adminBg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+
+.nav-link {
+  padding: 16px 8px;
+  font-size: 16px;
+}
+.box {
+  width: 30%;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 40px;
+  position: absolute;
+  right: 200px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 10px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+}
+
+.hidden {
+  display: none;
+}
+
+main > div {
+  width: 90%;
+  margin: 0 auto 40px;
+}
+
+.nav .nav-link {
+  padding: 16px 8px;
+  font-size: 16px;
+}
+
+.input-group {
+  width: 400px;
+}
+
+.top-section {
+  justify-content: space-between;
+  align-items: center;
+}
+.top-section p {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.input-group {
+  height: 40px;
+}
+
+#search-input {
+  height: 100%;
+}
+
+.table > :not(caption) > * > * {
+  padding: 0.5rem 0.5rem;
+}
+table thead {
+  padding: 0.5rem 0;
+  background-color: rgb(240, 120, 8);
+}
+.table-id {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.table > :not(:last-child) > :last-child > * {
+  text-align: center;
+}
+
+.table td,
+.table th {
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.table .table-id {
+  max-width: 40px;
+}
+
+.form-section {
+  margin: 20px auto;
+}
+.form-section img {
+  margin: 16px;
+}
+
+.director {
+  text-align: left;
+}
+
+.movie-edit {
+  display: none;
+}
+
+.movie-add {
+  display: none;
+}
+
+.form-img img {
+  width: 100%;
+}
+
+/* .btn-del,
+.btn-edit {
+  color: white;
+} */

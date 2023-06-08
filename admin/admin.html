@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.1/mdb.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css"
+      integrity="sha512-2yj9W0ZG7t+Z9fQf5rj0bNVTjJGvWm5tjJqMqgZ4xN/4v8f4SfPS5hZtJz9GZdH2zY+Tg4zvz+4v6r2jWn1w7Q=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="admin.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main class="login_content hidden">
+      <div class="box">
+        <!-- Pills navs -->
+        <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a
+              class="nav-link active"
+              id="tab-login"
+              data-mdb-toggle="pill"
+              href="#pills-login"
+              role="tab"
+              aria-controls="pills-login"
+              aria-selected="true"
+              >Login</a
+            >
+          </li>
+          <li class="nav-item" role="presentation">
+            <a
+              class="nav-link"
+              id="tab-register"
+              data-mdb-toggle="pill"
+              href="#pills-register"
+              role="tab"
+              aria-controls="pills-register"
+              aria-selected="false"
+              >Register</a
+            >
+          </li>
+        </ul>
+        <!-- Pills navs -->
+
+        <!-- Pills content -->
+        <div class="tab-content">
+          <div
+            class="tab-pane fade show active"
+            id="pills-login"
+            role="tabpanel"
+            aria-labelledby="tab-login"
+          >
+            <form>
+              <div class="text-center mb-3">
+                <p>Sign in with:</p>
+                <button
+                  type="button"
+                  class="btn btn-secondary btn-floating mx-1"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </button>
+
+                <button
+                  type="button"
+                  class="btn btn-secondary btn-floating mx-1"
+                >
+                  <i class="fab fa-google"></i>
+                </button>
+
+                <button
+                  type="button"
+                  class="btn btn-secondary btn-floating mx-1"
+                >
+                  <i class="fab fa-twitter"></i>
+                </button>
+
+                <button
+                  type="button"
+                  class="btn btn-secondary btn-floating mx-1"
+                >
+                  <i class="fab fa-github"></i>
+                </button>
+              </div>
+
+              <p class="text-center">or:</p>
+
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input type="email" id="loginName" class="form-control" />
+                <label class="form-label" for="loginName"
+                  >Email or username</label
+                >
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <input
+                  type="password"
+                  id="loginPassword"
+                  class="form-control"
+                />
+                <label class="form-label" for="loginPassword">Password</label>
+              </div>
+
+              <!-- 2 column grid layout -->
+              <div class="row mb-4">
+                <div class="col-md-6 d-flex justify-content-center">
+                  <!-- Checkbox -->
+                  <div class="form-check mb-3 mb-md-0">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="loginCheck"
+                      checked
+                    />
+                    <label class="form-check-label" for="loginCheck">
+                      Remember me
+                    </label>
+                  </div>
+                </div>
+
+                <div class="col-md-6 d-flex justify-content-center">
+                  <!-- Simple link -->
+                  <a href="#!">Forgot password?</a>
+                </div>
+              </div>
+
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-primary btn-block mb-4">
+                Sign in
+              </button>
+
+              <!-- Register buttons -->
+              <div class="text-center">
+                <p>Not a member? <a href="#!">Register</a></p>
+              </div>
+            </form>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="pills-register"
+            role="tabpanel"
+            aria-labelledby="tab-register"
+          >
+            <form>
+              <div class="text-center mb-3">
+                <p>Sign up with:</p>
+                <button
+                  type="button"
+                  class="btn btn-secondary btn-floating mx-1"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </button>
+
+                <button
+                  type="button"
+                  class="btn btn-secondary btn-floating mx-1"
+                >
+                  <i class="fab fa-google"></i>
+                </button>
+
+                <button
+                  type="button"
+                  class="btn btn-secondary btn-floating mx-1"
+                >
+                  <i class="fab fa-twitter"></i>
+                </button>
+
+                <button
+                  type="button"
+                  class="btn btn-secondary btn-floating mx-1"
+                >
+                  <i class="fab fa-github"></i>
+                </button>
+              </div>
+
+              <p class="text-center">or:</p>
+
+              <!-- Name input -->
+              <div class="form-outline mb-4">
+                <input type="text" id="registerName" class="form-control" />
+                <label class="form-label" for="registerName">Name</label>
+              </div>
+
+              <!-- Username input -->
+              <div class="form-outline mb-4">
+                <input type="text" id="registerUsername" class="form-control" />
+                <label class="form-label" for="registerUsername"
+                  >Username</label
+                >
+              </div>
+
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input type="email" id="registerEmail" class="form-control" />
+                <label class="form-label" for="registerEmail">Email</label>
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <input
+                  type="password"
+                  id="registerPassword"
+                  class="form-control"
+                />
+                <label class="form-label" for="registerPassword"
+                  >Password</label
+                >
+              </div>
+
+              <!-- Repeat Password input -->
+              <div class="form-outline mb-4">
+                <input
+                  type="password"
+                  id="registerRepeatPassword"
+                  class="form-control"
+                />
+                <label class="form-label" for="registerRepeatPassword"
+                  >Repeat password</label
+                >
+              </div>
+
+              <!-- Checkbox -->
+              <div class="form-check d-flex justify-content-center mb-4">
+                <input
+                  class="form-check-input me-2"
+                  type="checkbox"
+                  value=""
+                  id="registerCheck"
+                  checked
+                  aria-describedby="registerCheckHelpText"
+                />
+                <label class="form-check-label" for="registerCheck">
+                  I have read and agree to the terms
+                </label>
+              </div>
+
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-primary btn-block mb-3">
+                Sign in
+              </button>
+            </form>
+          </div>
+        </div>
+        <!-- Pills content -->
+      </div>
+    </main>
+    <main class="main_content">
+      <div class="header_nav">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <!-- Container wrapper -->
+          <div class="container-fluid">
+            <!-- Toggle button -->
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-mdb-toggle="collapse"
+              data-mdb-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <!-- Navbar brand -->
+              <a class="navbar-brand mt-2 mt-lg-0" href="#">
+                <img
+                  src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
+                  height="15"
+                  alt="MDB Logo"
+                  loading="lazy"
+                />
+              </a>
+              <!-- Left links -->
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Team</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Projects</a>
+                </li>
+              </ul>
+              <!-- Left links -->
+            </div>
+            <!-- Collapsible wrapper -->
+
+            <!-- Right elements -->
+            <div class="d-flex align-items-center">
+              <!-- Icon -->
+              <a class="text-reset me-3" href="#">
+                <i class="fas fa-shopping-cart"></i>
+              </a>
+
+              <!-- Notifications -->
+              <div class="dropdown">
+                <a
+                  class="text-reset me-3 dropdown-toggle hidden-arrow"
+                  href="#"
+                  id="navbarDropdownMenuLink"
+                  role="button"
+                  data-mdb-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-bell"></i>
+                  <span class="badge rounded-pill badge-notification bg-danger"
+                    >1</span
+                  >
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-end"
+                  aria-labelledby="navbarDropdownMenuLink"
+                >
+                  <li>
+                    <a class="dropdown-item" href="#">Some news</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Another news</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- Avatar -->
+              <div class="dropdown">
+                <a
+                  class="dropdown-toggle d-flex align-items-center hidden-arrow"
+                  href="#"
+                  id="navbarDropdownMenuAvatar"
+                  role="button"
+                  data-mdb-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img
+                    src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+                    class="rounded-circle"
+                    height="25"
+                    alt="Black and White Portrait of a Man"
+                    loading="lazy"
+                  />
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-end"
+                  aria-labelledby="navbarDropdownMenuAvatar"
+                >
+                  <li>
+                    <a class="dropdown-item" href="#">My profile</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Settings</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Logout</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- Right elements -->
+          </div>
+          <!-- Container wrapper -->
+        </nav>
+        <!-- Navbar -->
+      </div>
+
+      <div class="content">
+        <div class="row">
+          <div class="col-2 navigation">
+            <!-- Tab navs -->
+            <div
+              class="nav flex-column nav-pills text-center"
+              id="v-pills-tab"
+              role="tablist"
+              aria-orientation="vertical"
+            >
+              <a
+                class="nav-link active"
+                id="v-pills-home-tab"
+                data-mdb-toggle="pill"
+                href="#v-pills-home"
+                role="tab"
+                aria-controls="v-pills-home"
+                aria-selected="true"
+                >User</a
+              >
+              <a
+                class="nav-link"
+                id="v-pills-profile-tab"
+                data-mdb-toggle="pill"
+                href="#v-pills-profile"
+                role="tab"
+                aria-controls="v-pills-profile"
+                aria-selected="false"
+                >Movie</a
+              >
+              <a
+                class="nav-link"
+                id="v-pills-messages-tab"
+                data-mdb-toggle="pill"
+                href="#v-pills-messages"
+                role="tab"
+                aria-controls="v-pills-messages"
+                aria-selected="false"
+                >setting</a
+              >
+            </div>
+            <!-- Tab navs -->
+          </div>
+
+          <div class="col-10">
+            <!-- Tab content -->
+            <div class="tab-content" id="v-pills-tabContent">
+              <div
+                class="tab-pane fade show active"
+                id="v-pills-home"
+                role="tabpanel"
+                aria-labelledby="v-pills-home-tab"
+              >
+                <div class="top-section d-flex">
+                  <p>Products</p>
+                  <div class="input-group">
+                    <div class="form-outline">
+                      <input
+                        id="search-input"
+                        type="search"
+                        id="form1"
+                        class="form-control"
+                      />
+                      <label class="form-label" for="form1">Search</label>
+                    </div>
+                    <button
+                      id="search-button"
+                      type="button"
+                      class="btn btn-primary"
+                    >
+                      <i class="fas fa-search"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="main-section">
+                  <table class="table align-middle mb-0 bg-white user-table">
+                    <thead>
+                      <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>number</th>
+                        <th>gender</th>
+                        <th>date of birth</th>
+                        <th>address</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="table-id">1</td>
+                        <td>
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">John Doe</p>
+                              <p class="text-muted mb-0">john.doe@gmail.com</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <p class="fw-normal mb-1">0369042128</p>
+                        </td>
+
+                        <td>
+                          <!-- <span
+                            class="badge badge-success rounded-pill d-inline"
+                            >Active</span
+                          > -->
+                          <span>Nam</span>
+                        </td>
+                        <td>27/02/1998</td>
+                        <td>
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit.
+                        </td>
+                        <td>
+                          <button
+                            type="button"
+                            class="btn btn-link btn-sm btn-rounded"
+                          >
+                            Edit
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Movie -->
+              <div
+                class="tab-pane fade"
+                id="v-pills-profile"
+                role="tabpanel"
+                aria-labelledby="v-pills-profile-tab"
+              >
+                <div class="top-section d-flex">
+                  <p>Movie</p>
+                  <button class="btn btn-primary add-btn">
+                    <i class="fas fa-plus "></i class="mx-2">add
+                  </button>
+                  <div class="input-group">
+                    <div class="form-outline">
+                      <input
+                        id="search-input"
+                        type="search"
+                        id="form1"
+                        class="form-control"
+                      />
+                      <label class="form-label" for="form1">Search</label>
+                    </div>
+                    <button
+                      id="search-button"
+                      type="button"
+                      class="btn btn-primary"
+                    >
+                      <i class="fas fa-search"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="movie-edit">
+                  <div class="row">
+                    <div class="col-3 form-img"><div>
+                      <img src="https://www.cgv.vn/media/catalog/product/cache/1/thumbnail/240x388/c88460ec71d04fa96e628a21494d2fd3/7/0/700x1000-fastx_1.jpg" alt="">
+                    </div></div>
+                    <div class="col-9">
+                      <form class="form-section">
+                   
+                        <div class="form-group row mb-3">
+                          <label for="input-name" class="col-sm-2 col-form-label"
+                            >Movie Id</label
+                          >
+                          <div class="col-sm-5">
+                            <input
+                              type="text"
+                              class="form-control btn-secondary"
+                              id="input-name"
+                              placeholder="Input id"
+                              name="movieId"
+                              readonly
+                              
+                            />
+                          </div>
+                         
+                        </div>
+                        <div class="form-group row mb-3">
+                          <label for="input-name" class="col-sm-2 col-form-label"
+                            >Movie Name</label
+                          >
+                          <div class="col-sm-5">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="input-name"
+                              placeholder="Input Name"
+                              name="movieName"
+                            />
+                          </div>
+                         
+                        </div>
+                        <div class="form-group row mb-3">
+                          <label for="input-link" class="col-sm-2 col-form-label"
+                            >Poster Link</label
+                          >
+                          <div class="col-sm-5">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="input-link"
+                              placeholder="Input link"
+                              name="posterLink"
+                            />
+                          </div>
+                         
+                        </div>
+                        <div class="form-group row mb-3">
+                          <label for="input-director" class="col-sm-2 col-form-label"
+                            >Director</label
+                          >
+                          <div class="col-sm-5">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="input-director"
+                              placeholder="Input director"
+                              name="director"
+                            />
+                          </div>
+                         
+                        </div>
+                        
+                        <div class="form-group row mb-3">
+                          <label for="input-actor" class="col-sm-2 col-form-label"
+                            >Actor</label
+                          >
+                          <div class="col-sm-5">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="input-actor"
+                              placeholder="Input actor"
+                              name="actor"
+                            />
+                          </div>
+                         
+                        </div><div class="form-group row mb-3">
+                          <label for="input-type" class="col-sm-2 col-form-label"
+                            >Type</label
+                          >
+                          <div class="col-sm-5">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="input-type"
+                              placeholder="Input type"
+                              name="type"
+                            />
+                          </div>
+                         
+                        </div><div class="form-group row mb-3">
+                          <label for="input-date" class="col-sm-2 col-form-label"
+                            >Date</label
+                          >
+                          <div class="col-sm-5">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="input-date"
+                              placeholder="Input date"
+                              name="date"
+                            />
+                          </div>
+                         
+                        </div>
+                        <div class="form-group row mb-3">
+                          <label for="input-time" class="col-sm-2 col-form-label"
+                            >Time</label
+                          >
+                          <div class="col-sm-5">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="input-time"
+                              placeholder="Input time"
+                              name="time"
+                            />
+                          </div>
+                         
+                        </div>
+                        <div class="form-group row mb-3">
+                          <label for="input-rate" class="col-sm-2 col-form-label"
+                            >Rate</label
+                          >
+                          <div class="col-sm-5">
+                            <textarea class="form-control" name="rate" id="textAreaExample" rows="4"></textarea>
+                           
+                          </div>
+                         
+                        </div>
+                        <div class="form-group row mb-3">
+                          <label for="input-price" class="col-sm-2 col-form-label"
+                            >Price</label
+                          >
+                          <div class="col-sm-5">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="input-price"
+                              placeholder="Input price"
+                              name="price"
+                            />
+                          </div>
+                         
+                        </div>
+                       
+                        <button type="button" onclick="updateMovie()" class="btn btn-primary btn-sbm" id="submit-btn">
+                          Submit
+                        </button>
+                        <button type="button" onclick="addMovie()" class="btn btn-primary btn-add-sbm" id="submit-btn">
+                          Submit
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                  
+                 
+                </div>
+
+                <!-- <div class="movie-add">
+                  <div class="row">
+                    <div class="col-3 form-img"><div>
+                      <img src="https://www.cgv.vn/media/catalog/product/cache/1/thumbnail/240x388/c88460ec71d04fa96e628a21494d2fd3/7/0/700x1000-fastx_1.jpg" alt="">
+                    </div></div>
+                    <div class="col-9">
+                      <form class="form-section">
+                   
+                        <div class="form-group row mb-3">
+                          <label for="input-name" class="col-sm-2 col-form-label"
+                            >Movie Id</label
+                          >
+                          <div class="col-sm-5">
+                            <input
+                              type="text"
+                              class="form-control btn-secondary"
+                              id="input-name"
+                              placeholder="Input id"
+                              name="movieId"
+                              readonly
+                              
+                            />
+                          </div>
+                         
+                        </div>
+                        <div class="form-group row mb-3">
+                          <label for="input-name" class="col-sm-2 col-form-label"
+                            >Movie Name</label
+                          >
+                          <div class="col-sm-5">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="input-name"
+                              placeholder="Input Name"
+                              name="movieName"
+                            />
+                          </div>
+                         
+                        </div>
+                        <div class="form-group row mb-3">
+                          <label for="input-name" class="col-sm-2 col-form-label"
+                            >Poster Link</label
+                          >
+                          <div class="col-sm-5">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="input-link"
+                              placeholder="Input Name"
+                              name="posterLink"
+                            />
+                          </div>
+                         
+                        </div>
+                        <div class="form-group row mb-3">
+                          <label for="input-name" class="col-sm-2 col-form-label"
+                            >Director</label
+                          >
+                          <div class="col-sm-5">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="input-name"
+                              placeholder="Input Name"
+                              name="director"
+                            />
+                          </div>
+                         
+                        </div>
+                        
+                        <div class="form-group row mb-3">
+                          <label for="input-name" class="col-sm-2 col-form-label"
+                            >Actor</label
+                          >
+                          <div class="col-sm-5">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="input-name"
+                              placeholder="Input Name"
+                              name="actor"
+                            />
+                          </div>
+                         
+                        </div><div class="form-group row mb-3">
+                          <label for="input-name" class="col-sm-2 col-form-label"
+                            >Type</label
+                          >
+                          <div class="col-sm-5">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="input-name"
+                              placeholder="Input Name"
+                              name="type"
+                            />
+                          </div>
+                         
+                        </div><div class="form-group row mb-3">
+                          <label for="input-name" class="col-sm-2 col-form-label"
+                            >Date</label
+                          >
+                          <div class="col-sm-5">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="input-name"
+                              placeholder="Input Name"
+                              name="date"
+                            />
+                          </div>
+                         
+                        </div>
+                        <div class="form-group row mb-3">
+                          <label for="input-name" class="col-sm-2 col-form-label"
+                            >Time</label
+                          >
+                          <div class="col-sm-5">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="input-name"
+                              placeholder="Input Name"
+                              name="time"
+                            />
+                          </div>
+                         
+                        </div>
+                        <div class="form-group row mb-3">
+                          <label for="input-name" class="col-sm-2 col-form-label"
+                            >Rate</label
+                          >
+                          <div class="col-sm-5">
+                            <textarea class="form-control" name="rate" id="textAreaExample" rows="4"></textarea>
+                           
+                          </div>
+                         
+                        </div>
+                        <div class="form-group row mb-3">
+                          <label for="input-name" class="col-sm-2 col-form-label"
+                            >Price</label
+                          >
+                          <div class="col-sm-5">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="input-name"
+                              placeholder="Input Name"
+                              name="price"
+                            />
+                          </div>
+                         
+                        </div>
+                       
+                        <button type="button" onclick="updateMovie()" class="btn btn-primary btn-sbm" id="submit-btn">
+                          Submit
+                        </button>
+                       
+                      </form>
+                    </div>
+                  </div>
+                  
+                 
+                </div> -->
+                <div class="main-section">
+                  <table class="table align-middle mb-0 bg-white user-table movie-table">
+                    <thead>
+                      <tr>
+                        <th>Id</th>
+                        <th>Movie</th>
+                        <th>Actor</th>
+                        <th>Type</th>
+                        <th>premiere</th>
+                        <th>time</th>
+                        <th>rate</th>
+                        <th>price</th>
+                        <th>delete</th>
+                        <th>edit</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="table-id">1</td>
+                        <td>
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="https://www.cgv.vn/media/catalog/product/cache/1/thumbnail/240x388/c88460ec71d04fa96e628a21494d2fd3/7/0/700x1000-fastx_1.jpg"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">Fast and FuriousX</p>
+                              <p class="text-muted mb-0">Louis Leterrier</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <p class="fw-normal mb-1">
+                            Vin Diesel, Jason Momoa, Brie Larson
+                          </p>
+                        </td>
+
+                        <td>
+                         
+                          <span>Hành Động</span>
+                        </td>
+                        <td>27/02/1998</td>
+                        <td>2h20</td>
+                        <td class="rated">
+                          T16 - PHIM ĐƯỢC PHỔ BIẾN ĐẾN NGƯỜI XEM TỪ ĐỦ 16 TUỔI
+                          TRỞ LÊN (16+)
+                        </td>
+                        <td>200000</td>
+                        <td>
+                          <button
+                            type="button"
+                            class="btn btn-link btn-sm btn-rounded btn-del bg-danger" 
+                          >
+                            Del
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            type="button"
+                            class="btn btn-link btn-sm btn-rounded btn-edit bg-warning"
+                          >
+                            Edit
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="v-pills-messages"
+                role="tabpanel"
+                aria-labelledby="v-pills-messages-tab"
+              >
+                Messages content
+              </div>
+            </div>
+            <!-- Tab content -->
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- MDB -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.1/mdb.min.js"
+    ></script>
+    <!-- <script src="../data.js"></script> -->
+    <script src="admin.js"></script>
+  </body>
+</html>

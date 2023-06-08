@@ -1,0 +1,69 @@
+.main-container {
+  width: 80%;
+}
+
+.tabs-item {
+  border-top: 2px solid #ccc;
+  padding: 1rem 0 1.5rem;
+}
+.day-list li:hover,
+.address-list li:hover,
+.types-list li:hover,
+.site-list span:hover {
+  background-color: #ccc;
+  color: white;
+}
+
+ul {
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.day-list li,
+.address-list li,
+.types-list li {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  gap: 4px;
+  border: 2px solid #ccc;
+  padding: 4px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.day-list li span,
+.address-list li span,
+.types-list li span {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.1px;
+}
+.active {
+  background-color: black;
+  color: white;
+}
+.hiden {
+  display: none;
+}
+
+.tabs-address p,
+.tabs-types p {
+  font-size: 0.8rem;
+  text-transform: capitalize;
+}
+
+.site-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-list p {
+  padding: 10px 0 5px;
+  cursor: pointer;
+}
+.site-list span {
+  font-size: 0.8rem;
+  border: 2px solid #ccc;
+  padding: 4px 8px;
+  border-radius: 8px;
+}

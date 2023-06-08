@@ -1,0 +1,19 @@
+.login_content {
+  background: url("../img/adminBg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  height: 100vh;
+}
+.box {
+  width: 30%;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 40px;
+  position: absolute;
+  right: 200px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 10px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+}

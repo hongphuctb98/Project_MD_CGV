@@ -1,0 +1,157 @@
+.main {
+  background: none;
+}
+.slidebar p {
+  text-align: center;
+  color: red;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.slidebar ul {
+  background-color: #f3f3f3;
+  padding: 1rem 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.slidebar ul li {
+  padding: 0.8rem 1rem;
+  font-weight: 600;
+}
+.slidebar ul li:hover {
+  background-color: #ff6e1a;
+}
+.active {
+  background-color: #ff6e1a;
+}
+.img-acc {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #f3f3f3;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.img-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.img-wrap img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.img-wrap p {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.barcode {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.barcode span {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-right: 10px;
+}
+
+.barcode img {
+  width: 150px;
+  height: auto;
+}
+
+.info-acc {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  margin: 2rem auto 0.5rem;
+  background-color: #f3f3f3;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.info-acc > div {
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.info-acc p {
+  font-weight: bold;
+  width: 100px;
+}
+
+.btn {
+  background-color: #ff9f1a;
+  color: #fff;
+  padding: 10px 20px;
+  min-width: 100px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.history-item {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  width: 100%;
+  margin: 0 auto;
+
+  margin-bottom: 1rem;
+  background-color: #f3f3f3;
+  padding: 10px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.history-item > div {
+  margin-bottom: 10px;
+  width: 48%;
+}
+
+.history-book b {
+  font-weight: bold;
+}
+
+.modal-body form div {
+  display: flex;
+  padding: 0.3rem 0;
+  align-items: baseline;
+}
+
+.modal-body form input {
+  width: 100%;
+  border-radius: 4px;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #ccc;
+}
+
+.modal-body form p {
+  width: 100px;
+}
+.modal-body form .dob {
+  width: 32%;
+}
