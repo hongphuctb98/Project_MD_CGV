@@ -79,7 +79,12 @@ function validate(newUser) {
       "Vui lòng nhập mật khẩu ( ít nhất 8 kí tự, bao gồm cả chữ hoa, chữ thường, số và ký tự đặc biệt)<br> ";
   }
 
-  if (!newUser.dob.day || !newUser.dob.month || !newUser.dob.year) {
+  if (
+    !newUser.dob.day ||
+    !newUser.dob.month ||
+    !newUser.dob.year ||
+    !validateDay(newUser.dob.day, newUser.dob.month, newUser.dob.year)
+  ) {
     mess += "Vui lòng nhập ngày sinh <br>";
   }
 
@@ -101,17 +106,50 @@ function validate(newUser) {
   return mess;
 }
 
-function validateBirthday() {
+function validateDay(day, month, year) {
   let flag = true;
-  if (newUser.dob.day > 31 || newUser.dob.day < 1) {
+  if (!parseInt(day) || !parseInt(month) || !parseInt(year)) {
     flag = false;
   }
-  if (newUser.dob.month > 12 || newUser.dob.month < 1) {
+  if (month < 1 || month > 12) {
     flag = false;
   }
-  if (newUser.dob.year > 2021 || newUser.dob.year < 1900) {
+  if (year < 1) {
     flag = false;
   }
+
+  switch (month) {
+    case 1:
+    case 3:
+    case 5:
+    case 7:
+    case 8:
+    case 10:
+    case 12:
+      if (day < 1 || day > 31) {
+        flag = false;
+      }
+      break;
+    case 4:
+    case 6:
+    case 9:
+    case 11:
+      if (day < 1 || day > 30) {
+        flag = false;
+      }
+      break;
+    case 2:
+      if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+        if (day < 1 || day > 29) {
+          flag = false;
+        }
+      } else {
+        if (day < 1 || day > 28) {
+          flag = false;
+        }
+      }
+  }
+
   return flag;
 }
 

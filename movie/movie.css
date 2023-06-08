@@ -30,6 +30,11 @@
   height: 300px;
 }
 
+.card-title {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  height: 3rem;
+}
 .movie-layout .card-title {
   height: 3rem;
 }
