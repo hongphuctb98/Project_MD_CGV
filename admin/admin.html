@@ -426,7 +426,7 @@
                 role="tab"
                 aria-controls="v-pills-messages"
                 aria-selected="false"
-                >setting</a
+                >data</a
               >
             </div>
             <!-- Tab navs -->
@@ -964,7 +964,40 @@
                 role="tabpanel"
                 aria-labelledby="v-pills-messages-tab"
               >
-                Messages content
+              <div
+              class="row justify-content-center align-items-center mt-4"
+              id="container-form"
+            >
+              <div class="col-lg-6 col-lg-offset-4">
+                <form>
+                  <div class="form-group row mb-3">
+                    <label for="input-id" class="col-sm-3 col-form-label"
+                      >File source</label
+                    >
+                    <div class="col-sm-9">
+                      <input
+                        type="file"
+                        class="form-control"
+                        id="input-file"
+                        accept=".json"
+                      />
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-primary" id="import-btn">
+                    Import Data
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="export-btn"
+                    onclick="download();"
+                  >
+                    Export Data
+                  </button>
+                </form>
+                <pre id="preview"></pre>
+              </div>
+            </div>
               </div>
             </div>
             <!-- Tab content -->
@@ -979,6 +1012,7 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.1/mdb.min.js"
     ></script>
     <!-- <script src="../data.js"></script> -->
+    <script src="./FileSaver.js"></script>
     <script src="admin.js"></script>
   </body>
 </html>

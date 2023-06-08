@@ -277,3 +277,29 @@ addBtn.addEventListener("click", () => {
   submitAddBtn.style.display = "block";
   addMovie();
 });
+
+function download() {
+  var blob = new Blob([`${JSON.stringify(movielist, "\t", 2)}`], {
+    type: "text/plain;charset=utf-8",
+  });
+  saveAs(blob, "ListMovie.txt");
+}
+
+const importBtn = document.getElementById("import-btn");
+
+importBtn?.addEventListener("click", function () {
+  let file = document.getElementById("input-file").files[0];
+  var reader = new FileReader();
+  reader.addEventListener("load", function () {
+    movieList = JSON.parse(this.result);
+    console.log(movieList);
+    // saveToStorage("stringArr", movieList);
+    for (let i = 0; i < movieList.length - 1; i++) {
+      if (movieList[i].id == movieList[i + 1].id) {
+        movieList.splice(i, 1);
+        saveToStorage("stringArr", movieList);
+      }
+    }
+  });
+  reader.readAsText(file);
+});
