@@ -7,8 +7,10 @@ const movieEdit = document.querySelector(".movie-edit");
 const movieAdd = document.querySelector(".movie-add");
 const formSection = document.querySelector(".form-section");
 const addBtn = document.querySelector(".add-btn");
+let cancelBtn = document.querySelector(".btn-cancel");
 let searchMovieiInput = document.querySelector(".search-movie-input");
 let searchMovieBtn = document.querySelector(".search-movie-btn");
+
 let users = JSON.parse(localStorage.getItem("USERS"));
 let movielist = JSON.parse(localStorage.getItem("MovieList"));
 //render user
@@ -276,6 +278,10 @@ addBtn.addEventListener("click", () => {
   submitBtn.style.display = "none";
   submitAddBtn.style.display = "block";
   addMovie();
+});
+
+cancelBtn.addEventListener("click", () => {
+  movieEdit.style.display = "none";
 });
 
 searchMovieBtn.addEventListener("click", () => {

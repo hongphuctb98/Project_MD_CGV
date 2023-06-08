@@ -109,6 +109,17 @@ table thead {
   width: 100%;
 }
 
+.btn-groups {
+  column-gap: 1rem;
+}
+
+.navigation {
+  position: fixed;
+}
+
+.user-content {
+  margin-left: 16.66%;
+}
 /* .btn-del,
 .btn-edit {
   color: white;
