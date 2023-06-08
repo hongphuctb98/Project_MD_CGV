@@ -29,7 +29,7 @@ movielist.forEach((movie, index) => {
         </li>
       </ul>
     </a>
-    <a href="../book/book.html" class="btn">
+    <a href="../book/book.html?id=${movie.movieId}" class="btn">
       <img
         src="https://www.cgv.vn/skin/frontend/cgv/default/images/bg-cate-booking.png"
         alt=""

@@ -94,7 +94,10 @@ ticketBox.addEventListener("click", (e) => {
   document.querySelectorAll(".seat-item").forEach((item) => {
     item.classList.remove("checked");
   });
-  if (e.target.classList.contains("seat-item")) {
+  if (
+    e.target.classList.contains("seat-item") &&
+    !e.target.classList.contains("sold")
+  ) {
     currentOrder.seat = e.target.innerText;
     e.target.classList.add("checked");
   }

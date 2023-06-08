@@ -75,10 +75,11 @@ function validate(newUser) {
   }
 
   if (!newUser.password || !passRegex.test(newUser.password)) {
-    mess += "Vui lòng nhập mật khẩu <br>";
+    mess +=
+      "Vui lòng nhập mật khẩu ( ít nhất 8 kí tự, bao gồm cả chữ hoa, chữ thường, số và ký tự đặc biệt)<br> ";
   }
 
-  if (!newUser.dob) {
+  if (!newUser.dob.day || !newUser.dob.month || !newUser.dob.year) {
     mess += "Vui lòng nhập ngày sinh <br>";
   }
 
@@ -98,6 +99,20 @@ function validate(newUser) {
     mess += "Vui lòng chấp nhận điều khoản <br>";
   }
   return mess;
+}
+
+function validateBirthday() {
+  let flag = true;
+  if (newUser.dob.day > 31 || newUser.dob.day < 1) {
+    flag = false;
+  }
+  if (newUser.dob.month > 12 || newUser.dob.month < 1) {
+    flag = false;
+  }
+  if (newUser.dob.year > 2021 || newUser.dob.year < 1900) {
+    flag = false;
+  }
+  return flag;
 }
 
 let newUser = {

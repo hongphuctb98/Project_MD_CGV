@@ -34,25 +34,6 @@ let selectedType = null;
 let selectedSite = null;
 let idOrder = Math.floor(Math.random() * 100);
 
-tabList.addEventListener("click", (event) => {
-  const target = event.target;
-  if (target.closest(".day-item")) {
-    selectedDate = target.closest(".day-item").dataset.date;
-    updateSelectedTab(target.closest(".day-item"));
-  } else if (target.closest(".address-item")) {
-    selectedAddress = target.closest(".address-item").innerText.trim();
-    updateSelectedTab(target.closest(".address-item"));
-  } else if (target.closest(".types-item")) {
-    selectedType = target.closest(".types-item").innerText.trim();
-    updateSelectedTab(target.closest(".types-item"));
-  } else if (target.closest(".site-item")) {
-    selectedSite = target.closest(".site-item").innerText.trim();
-    updateSelectedTab(target.closest(".site-item"));
-  }
-  if (selectedDate && selectedAddress && selectedType && selectedSite) {
-    createOrder(selectedDate, selectedAddress, selectedType, selectedSite);
-  }
-});
 function createOrder(
   selectedDate,
   selectedAddress,
@@ -70,8 +51,53 @@ function createOrder(
     seat: null,
     price: null,
   };
-
   saveToStorage("ORDER", order);
+  console.log(order);
+}
+
+tabList.addEventListener("click", (event) => {
+  const target = event.target;
+  if (target.closest(".day-item")) {
+    selectedDate = target.closest(".day-item").dataset.date;
+    updateSelectedTab(target.closest(".day-item"));
+  } else if (target.closest(".address-item")) {
+    selectedAddress = target.closest(".address-item").innerText.trim();
+    updateSelectedTab(target.closest(".address-item"));
+  } else if (target.closest(".types-item")) {
+    selectedType = target.closest(".types-item").innerText.trim();
+    updateSelectedTab(target.closest(".types-item"));
+  } else if (target.closest(".site-item")) {
+    selectedSite = target.closest(".site-item").innerText.trim();
+    updateSelectedTab(target.closest(".site-item"));
+  }
+  if (selectedDate && selectedAddress && selectedType && selectedSite) {
+    createOrder(selectedDate, selectedAddress, selectedType, selectedSite);
+    window.location.href = `../bk-step/bk-step.html?idOrder=${idOrder}`;
+  }
+});
+
+let mess = "";
+function validateOrder(order) {
+  if (!order.date) {
+    alert("Vui lòng chọn ngày");
+    return false;
+  }
+  if (!order.address) {
+    alert("Vui lòng chọn địa chỉ");
+    return false;
+  }
+  if (!order.type) {
+    alert("Vui lòng chọn loại vé");
+    return false;
+  }
+  if (!order.site) {
+    alert("Vui lòng chọn khách sạn");
+    return false;
+  }
+  if (!order.seat) {
+    alert("Vui lòng chọn ghế");
+    return false;
+  }
 }
 
 // update selected
@@ -87,11 +113,3 @@ function updateSelectedTab(selectedTab) {
 }
 
 const siteList = document.querySelector(".site-list");
-
-siteList.addEventListener("click", (e) => {
-  if (e.target.classList.contains("site-item")) {
-    window.location.href = `../bk-step/bk-step.html?idOrder=${idOrder}`;
-  }
-});
-
-console.log(currentAccount);
