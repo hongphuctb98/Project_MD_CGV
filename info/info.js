@@ -63,7 +63,6 @@ function renderHistory(acc) {
       return acc.id == order.idUser;
     })
     .forEach((his) => {
-      console.log(his);
       colMain.innerHTML += `
         <div class="history-book">
         <div class="history-item">

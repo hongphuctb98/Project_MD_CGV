@@ -13,7 +13,6 @@ function changeMoney(money) {
   });
   return currencyString;
 }
-// let movielist = JSON.parse(localStorage.getItem("MovieList"));
 rederOrder();
 //render order
 function rederOrder() {
@@ -22,7 +21,6 @@ function rederOrder() {
   let price = movielist.find((movie) => {
     return movie.movieId == currentOrder.idMovie;
   }).price;
-  console.log(currentOrder.seat);
   currentOrder.price = parseInt(price) + 200000;
   filmOrder.innerHTML = `
 <div class=""> <img src="${
@@ -48,10 +46,10 @@ function rederOrder() {
                   <li><span>Ghế </span>${currentOrder.seat}</li>
                 </ul>
                 <ul>
-                  <li><span>Giá vé:</span> ${changeMoney(price)} ₫	
+                  <li><span>Giá vé:</span> ${changeMoney(price)}
                   </li>
                   <li><span>Combo:</span> 200.000 ₫	</li>
-                  <li><span>Tổng:</span> ${changeMoney(currentOrder.price)}₫	
+                  <li><span>Tổng:</span> ${changeMoney(currentOrder.price)}
                   </li>
 
         </ul>
@@ -65,8 +63,14 @@ function rederOrder() {
     e.preventDefault();
     console.log("book");
     orderList.push(currentOrder);
+    let check = true;
+    for (let key in currentOrder) {
+      if (!currentOrder[key]) check = false;
+    }
+    if (check) {
+      overlay.style.display = "block";
+    }
     saveToStorage(orderListKey, orderList);
-    overlay.style.display = "block";
   });
 }
 
@@ -79,21 +83,25 @@ for (let row of rows) {
   let rowElement = document.createElement("div");
   rowElement.classList.add("row-seat");
 
+  // kiểm tra seat đã sold
   for (let i = 1; i <= numSeats; i++) {
     let seatClass = "normal";
 
     let isSeatSold = orderList.some((order) => {
+      console.log(order.seat);
       return (
         order.address === currentOrder.address &&
         order.date === currentOrder.date &&
         order.site === currentOrder.site &&
-        order.seat === `${row}${i}`
+        order.seat.includes(`${row}${i}`)
       );
     });
+
     if (row === "E") {
       seatClass = "vip";
-    } else if (isSeatSold) {
-      seatClass = "sold";
+    }
+    if (isSeatSold) {
+      seatClass += " sold";
     }
     rowElement.innerHTML += `<span class="seat-item ${seatClass}">${row}${i}</span>`;
   }
@@ -101,19 +109,24 @@ for (let row of rows) {
   ticketBox.appendChild(rowElement);
 }
 
+//chọn ghế
 ticketBox.addEventListener("click", (e) => {
   e.preventDefault();
 
-  document.querySelectorAll(".seat-item").forEach((item) => {
-    item.classList.remove("checked");
-  });
   if (
     e.target.classList.contains("seat-item") &&
     !e.target.classList.contains("sold")
   ) {
     currentOrder.seat = e.target.innerText;
-    e.target.classList.add("checked");
-  }
 
+    e.target.classList.toggle("checked");
+  }
+  let seats = [];
+  document.querySelectorAll(".seat-item").forEach((item) => {
+    if (item.classList.contains("checked")) {
+      seats.push(item.innerText);
+    }
+  });
+  currentOrder.seat = seats;
   rederOrder();
 });
