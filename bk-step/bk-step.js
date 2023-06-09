@@ -18,10 +18,18 @@ rederOrder();
 function rederOrder() {
   const filmOrder = document.querySelector(".film-order");
   filmOrder.innerHTML = "";
+
+  //tính tiền
   let price = movielist.find((movie) => {
     return movie.movieId == currentOrder.idMovie;
   }).price;
-  currentOrder.price = parseInt(price) + 200000;
+
+  let count = 0;
+  for (let x in currentOrder.seat) {
+    count++;
+  }
+  currentOrder.price = parseInt(price) * count + 200000;
+
   filmOrder.innerHTML = `
 <div class=""> <img src="${
     movielist.find((movie) => {
@@ -88,7 +96,6 @@ for (let row of rows) {
     let seatClass = "normal";
 
     let isSeatSold = orderList.some((order) => {
-      console.log(order.seat);
       return (
         order.address === currentOrder.address &&
         order.date === currentOrder.date &&

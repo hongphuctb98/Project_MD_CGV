@@ -77,6 +77,7 @@ function renderHistory(acc) {
           <div><b>Địa chỉ </b>${his.address}</div>
           <div><b>Ghế </b>${his.seat}</div>
           <div><b>Loại </b>${his.type}</div>
+          <div><b>Giá </b>${his.price}</div>
         </div>
       </div>
      
@@ -96,7 +97,7 @@ function rednerModal(acc) {
               </div>
               <div>
                 <p>Email</p>
-                <input type="text" name="email" value="${acc.email}" />
+                <input type="text" name="email" value="${acc.email}" readonly //>
               </div>
               <div>
                 <p>Địa chỉ</p>
@@ -118,7 +119,7 @@ function rednerModal(acc) {
               </div>
               <div>
                 <p>password</p>
-                <input type="text" name="password" value="${acc.password}" />
+                <input type="text" name="password" value="${acc.password}" readonly/>
               </div>
   `;
 }

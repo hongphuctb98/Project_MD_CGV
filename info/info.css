@@ -117,6 +117,7 @@ h2 {
 .history-item {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   border-radius: 10px;
   width: 100%;
   margin: 0 auto;
@@ -129,7 +130,7 @@ h2 {
 
 .history-item > div {
   margin-bottom: 10px;
-  width: 48%;
+  width: 45%;
 }
 
 .history-book b {
