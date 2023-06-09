@@ -4,6 +4,15 @@ let currentOrder = getFromStorage(orderKey);
 let movielist = JSON.parse(localStorage.getItem("MovieList"));
 const rows = ["A", "B", "C", "D", "E"];
 const numSeats = 12;
+
+function changeMoney(money) {
+  const number = parseInt(money);
+  const currencyString = number.toLocaleString("vi-VN", {
+    style: "currency",
+    currency: "VND",
+  });
+  return currencyString;
+}
 // let movielist = JSON.parse(localStorage.getItem("MovieList"));
 rederOrder();
 //render order
@@ -13,6 +22,7 @@ function rederOrder() {
   let price = movielist.find((movie) => {
     return movie.movieId == currentOrder.idMovie;
   }).price;
+  console.log(currentOrder.seat);
   currentOrder.price = parseInt(price) + 200000;
   filmOrder.innerHTML = `
 <div class=""> <img src="${
@@ -35,13 +45,13 @@ function rederOrder() {
     currentOrder.date
   }</li>
                   <li><span>Phòng chiếu </span>L'AMOUR</li>
-                  <li><span>Ghế</span>${currentOrder.seat}</li>
+                  <li><span>Ghế </span>${currentOrder.seat}</li>
                 </ul>
                 <ul>
-                  <li><span>Giá vé:</span>${price} ₫	
+                  <li><span>Giá vé:</span> ${changeMoney(price)} ₫	
                   </li>
-                  <li><span>Combo:</span>200.000 ₫	</li>
-                  <li><span>Tổng:</span>${price + 200000}₫	
+                  <li><span>Combo:</span> 200.000 ₫	</li>
+                  <li><span>Tổng:</span> ${changeMoney(currentOrder.price)}₫	
                   </li>
 
         </ul>
@@ -50,15 +60,18 @@ function rederOrder() {
  <button class="btn book-btn">ĐẶT VÉ</button>
 </div>`;
   const bookBtn = document.querySelector(".book-btn");
-  console.log(bookBtn);
+  const overlay = document.querySelector(".overlay");
   bookBtn.addEventListener("click", (e) => {
     e.preventDefault();
     console.log("book");
     orderList.push(currentOrder);
     saveToStorage(orderListKey, orderList);
-    alert("Đặt vé thành công");
-    window.location.href = "../main.html";
+    overlay.style.display = "block";
   });
+}
+
+function reload() {
+  window.location.href = "../main.html";
 }
 
 //render seat

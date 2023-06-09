@@ -50,5 +50,3 @@ movieDisplay.addEventListener("click", (e) => {
     window.location.href = "../filmInfor/filmInfor.html";
   }
 });
-
-console.log(movie);

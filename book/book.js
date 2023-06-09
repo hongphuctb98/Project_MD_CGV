@@ -1,6 +1,5 @@
 const today = new Date();
 const dayList = document.querySelector(".day-list");
-
 //render ngay
 for (let i = 0; i < 20; i++) {
   const date = new Date(
@@ -43,6 +42,7 @@ function createOrder(
   let order = {
     idOrder: idOrder,
     idUser: currentAccount.id,
+
     idMovie: window.location.href.split("=")[1],
     date: selectedDate,
     address: selectedAddress,
@@ -76,30 +76,6 @@ tabList.addEventListener("click", (event) => {
   }
 });
 
-let mess = "";
-function validateOrder(order) {
-  if (!order.date) {
-    alert("Vui lòng chọn ngày");
-    return false;
-  }
-  if (!order.address) {
-    alert("Vui lòng chọn địa chỉ");
-    return false;
-  }
-  if (!order.type) {
-    alert("Vui lòng chọn loại vé");
-    return false;
-  }
-  if (!order.site) {
-    alert("Vui lòng chọn khách sạn");
-    return false;
-  }
-  if (!order.seat) {
-    alert("Vui lòng chọn ghế");
-    return false;
-  }
-}
-
 // update selected
 function updateSelectedTab(selectedTab) {
   const tabsItem = selectedTab.closest(".tabs-item");
@@ -112,4 +88,6 @@ function updateSelectedTab(selectedTab) {
   selectedTab.classList.add("active");
 }
 
-const siteList = document.querySelector(".site-list");
+if (currentAccount.length == 0) {
+  window.location.href = "../login/login.html";
+}

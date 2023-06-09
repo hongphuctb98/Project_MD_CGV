@@ -34,6 +34,11 @@
 }
 
 .product-book .btn-film-info {
-  padding: 0.5rem 1.2rem;
   font-size: 1rem;
+  padding: 0;
+}
+
+.product-book .btn-film-info a {
+  padding: 8px 16px;
+  display: inline-block;
 }
