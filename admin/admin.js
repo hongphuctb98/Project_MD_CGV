@@ -10,9 +10,13 @@ const addBtn = document.querySelector(".add-btn");
 let cancelBtn = document.querySelector(".btn-cancel");
 let searchMovieiInput = document.querySelector(".search-movie-input");
 let searchMovieBtn = document.querySelector(".search-movie-btn");
+let pagination = document.querySelector(".pagination");
 
 let users = JSON.parse(localStorage.getItem("USERS"));
 let movielist = JSON.parse(localStorage.getItem("MovieList"));
+
+let currentUserPage = 1;
+
 //render user
 function renderUser(users) {
   tbodyUser.innerHTML = "";
@@ -61,48 +65,62 @@ function renderUser(users) {
   });
 }
 //render movie
+let currentPage = 1;
+let numberPerPage = 4;
+
+pagination.addEventListener("click", (e) => {
+  if (parseInt(e.target.textContent)) {
+    currentPage = parseInt(e.target.textContent);
+  }
+  renderMovie(movielist);
+});
 
 function renderMovie(movielist) {
   tbodyMovie.innerHTML = "";
-  movielist.forEach((movie) => {
+  // movielist.forEach((movie, i) =>
+  for (
+    let i = (currentPage - 1) * numberPerPage;
+    i < currentPage * numberPerPage;
+    i++
+  ) {
     let trEle = document.createElement("tr");
     trEle.classList.add("movie-item");
     trEle.innerHTML = `
-  <td class="table-id">${movie.movieId}</td>
+  <td class="table-id">${movielist[i].movieId}</td>
   <td>
     <div class="d-flex align-items-center">
       <img
-        src=${movie.imgLink}
+        src=${movielist[i].imgLink}
         alt=""
         style="width: 45px; height: 45px"
       />
       <div class="ms-3">
-        <p class="fw-bold mb-1">${movie.nameMovie}</p>
-        <p class="text-muted mb-0 director">${movie.director}</p>
+        <p class="fw-bold mb-1">${movielist[i].nameMovie}</p>
+        <p class="text-muted mb-0 director">${movielist[i].director}</p>
       </div>
     </div>
   </td>
   <td>
     <p class="fw-normal mb-1">
-    ${movie.actor.join(", ")}
+    ${movielist[i].actor.join(", ")}
     </p>
   </td>
 
   <td>
    
-    <span>${movie.type.join(", ")}</span>
+    <span>${movielist[i].type.join(", ")}</span>
   </td>
   <td>27/02/1998</td>
   <td>2h20</td>
   <td class="rated">
-  ${movie.rated}
+  ${movielist[i].rated}
   </td>
-  <td>${movie.price}</td>
+  <td>${movielist[i].price}</td>
   <td>
     <button
       type="button"
       class="btn  btn-sm btn-rounded btn-del btn-danger" 
-      data-del= ${movie.movieId}
+      data-del= ${movielist[i].movieId}
     >
       Del
     </button>
@@ -111,14 +129,14 @@ function renderMovie(movielist) {
     <button
       type="button"
       class="btn  btn-sm btn-rounded btn-edit btn-warning"
-      data-id= ${movie.movieId}
+      data-id= ${movielist[i].movieId}
     >
       Edit
     </button>
   </td>
   `;
     tbodyMovie.appendChild(trEle);
-  });
+  }
 }
 
 //render form edit

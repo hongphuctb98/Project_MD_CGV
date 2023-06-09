@@ -120,3 +120,8 @@ table thead {
 .user-content {
   margin-left: 16.66%;
 }
+
+.pagination {
+  justify-content: center;
+  padding-top: 2rem;
+}
