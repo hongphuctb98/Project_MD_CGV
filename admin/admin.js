@@ -66,7 +66,7 @@ function renderUser(users) {
 }
 //render movie
 let currentPage = 1;
-let numberPerPage = 4;
+let numberPerPage = 5;
 
 pagination.addEventListener("click", (e) => {
   if (parseInt(e.target.textContent)) {
