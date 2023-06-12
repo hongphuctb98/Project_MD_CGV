@@ -80,9 +80,7 @@ function validate(newUser) {
   }
 
   if (
-    !newUser.dob.day ||
-    !newUser.dob.month ||
-    !newUser.dob.year ||
+    (!newUser.dob.day || !newUser.dob.month || !newUser.dob.year) &&
     !validateDay(newUser.dob.day, newUser.dob.month, newUser.dob.year)
   ) {
     mess += "Vui lòng nhập ngày sinh <br>";
