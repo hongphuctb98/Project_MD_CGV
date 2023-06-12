@@ -156,3 +156,8 @@ h2 {
 .modal-body form .dob {
   width: 32%;
 }
+
+input[name="email"],
+input[name="password"] {
+  background-color: #ccc;
+}
