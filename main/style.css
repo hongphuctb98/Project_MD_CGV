@@ -476,6 +476,7 @@ p {
   }
   .logo,
   .header-nav {
+    display: block;
     padding: 0 1rem;
   }
   .main {
